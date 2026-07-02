@@ -73,23 +73,18 @@ html, body {
 }
 @keyframes fadeIn { from { opacity: 0; } }
 
-/* Moody grayscale wallpaper reminiscent of the reference */
+/* Wallpaper — Moraine Lake at sunset (bundled, no network needed) */
 .desktop::before {
   content: ""; position: absolute; inset: 0; z-index: 0;
-  background:
-    radial-gradient(120% 90% at 50% 8%, rgba(255,255,255,0.10), transparent 55%),
-    radial-gradient(80% 70% at 48% 46%, rgba(230,230,235,0.9), rgba(150,150,158,0.75) 42%, rgba(70,70,76,0.9) 78%),
-    linear-gradient(180deg, #c9c9cf 0%, #9a9aa2 40%, #6b6b73 72%, #48484f 100%);
+  background: url("wallpaper.jpg") center / cover no-repeat, #48484f;
   transition: background 0.8s ease, filter 0.8s ease;
 }
-/* Silhouette / portrait suggestion + film grain */
+/* Soft vignette so the menu bar, labels, and dock stay readable */
 .desktop::after {
   content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
   background:
-    radial-gradient(38% 52% at 50% 52%, rgba(20,20,24,0.55), transparent 70%),
-    radial-gradient(60% 80% at 50% 120%, rgba(0,0,0,0.65), transparent 60%);
-  mix-blend-mode: multiply;
-  opacity: 0.85;
+    linear-gradient(180deg, rgba(0,0,0,0.30), transparent 14%),
+    linear-gradient(0deg, rgba(0,0,0,0.35), transparent 22%);
 }
 .desktop[data-wall="1"]::before {
   background:

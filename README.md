@@ -1,10 +1,11 @@
 # Silence — a macOS desktop-style web app
 
 A single-page, dependency-free web experience that recreates a macOS desktop,
-built from the attached walkthrough. Moody grayscale wallpaper, scattered
-draggable app icons, real draggable/resizable windows, and a magnifying Dock.
-The UI is in English; each artwork keeps its original French title as a
-subtitle.
+built from the attached walkthrough. A Moraine Lake sunset wallpaper
+([photo from Unsplash](https://unsplash.com/photos/91e8fad9978e), bundled
+locally), scattered draggable app icons, real draggable/resizable windows, and
+a magnifying Dock. The UI is in English; each artwork keeps its original
+French title as a subtitle.
 
 ![reference layout: scattered icons + dock](https://img.shields.io/badge/vanilla-HTML%20%C2%B7%20CSS%20%C2%B7%20JS-111)
 
@@ -42,6 +43,8 @@ python3 -m http.server 8000   # then visit http://localhost:8000
 | `index.html` | Structure: menu bar, desktop, dock, boot screen |
 | `styles.css` | Wallpaper, macOS arrow cursor, glass, dock, windows, animations |
 | `app.js` | Window manager, dragging/resizing, dock magnification, menus |
+| `wallpaper.jpg` | Desktop wallpaper (Moraine Lake, via Unsplash) |
 
-Everything is self-contained — icons are inline SVG, the cursor and wallpaper
-are pure CSS, and there are no network or package dependencies.
+Everything is self-contained — icons are inline SVG, the cursor is an inline
+SVG data URI, the wallpaper ships with the repo, and there are no network or
+package dependencies.
