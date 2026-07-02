@@ -29,30 +29,30 @@
 
   /* ---------- desktop content model ---------- */
   const PIECES = [
-    { id: "champ", label: "Champ Silencieux", fr: "Silent Field", x: 60, y: 40,
+    { id: "champ", label: "Silent Field", fr: "Champ Silencieux", x: 60, y: 40,
       c1: "#ff7a2f", c2: "#c73a12", icon: glyph.field(), art: ["#f6a56b", "#7a2e12"],
-      desc: "Une étendue sans bruit, où le vent oublie de parler. Cette pièce explore le vide comme matière — la texture du rien, patiemment cadrée.",
-      tags: ["Photographie", "Silence", "2024"] },
-    { id: "silences", label: "Les Silences Mépris", fr: "The Scorned Silences", x: 470, y: 30,
+      desc: "An expanse without noise, where the wind forgets to speak. This piece explores emptiness as material — the texture of nothing, patiently framed.",
+      tags: ["Photography", "Silence", "2024"] },
+    { id: "silences", label: "The Scorned Silences", fr: "Les Silences Mépris", x: 470, y: 30,
       c1: "#7fe0a0", c2: "#1e7d4a", icon: glyph.leaf(), art: ["#bfeacb", "#173b26"],
-      desc: "Ce qui n'est pas dit pèse davantage. Une série sur les refus muets, la dignité des choses tues et le mépris qui se retient.",
-      tags: ["Série", "Portrait", "Argentique"] },
-    { id: "lisiere", label: "Lisière", fr: "Edge of the Woods", x: 120, y: 190,
+      desc: "What goes unsaid weighs more. A series on wordless refusals, the dignity of things left unspoken, and scorn held back.",
+      tags: ["Series", "Portrait", "Analog Film"] },
+    { id: "lisiere", label: "Edge of the Woods", fr: "Lisière", x: 120, y: 190,
       photo: ["#8a8f96", "#2c2f34"], icon: null, art: ["#9aa0a8", "#22252b"],
-      desc: "La frontière tremblante entre la forêt et le champ, entre le connu et l'oubli. Là où le regard hésite avant de basculer.",
-      tags: ["Paysage", "Noir & Blanc"] },
-    { id: "eau", label: "Là où dort l'eau", fr: "Where the Water Sleeps", x: 250, y: 220,
+      desc: "The trembling border between forest and field, between the known and the forgotten. Where the gaze hesitates before tipping over.",
+      tags: ["Landscape", "Black & White"] },
+    { id: "eau", label: "Where the Water Sleeps", fr: "Là où dort l'eau", x: 250, y: 220,
       c1: "#ff3b6b", c2: "#8a0d33", icon: glyph.wave(), art: ["#ff6f92", "#4a0b22"],
-      desc: "Les eaux dormantes gardent la mémoire du ciel. Un travail sur le reflet, l'immobilité et la profondeur qui ne se montre jamais.",
-      tags: ["Vidéo", "Installation", "2023"] },
-    { id: "elan", label: "Élan Brut", fr: "Raw Momentum", x: 400, y: 300,
+      desc: "Still waters keep the memory of the sky. A study of reflection, stillness, and the depth that never shows itself.",
+      tags: ["Video", "Installation", "2023"] },
+    { id: "elan", label: "Raw Momentum", fr: "Élan Brut", x: 400, y: 300,
       c1: "#39d98a", c2: "#0c5a3a", icon: glyph.spark(), art: ["#7ff0bd", "#0a3f2a"],
-      desc: "Le geste avant la pensée. Une exploration de l'énergie non filtrée — le mouvement capté à l'instant où il échappe au contrôle.",
-      tags: ["Danse", "Capture", "Live"] },
-    { id: "revolte", label: "Révolte douce", fr: "Gentle Revolt", x: 500, y: 250,
+      desc: "The gesture before the thought. An exploration of unfiltered energy — movement caught at the instant it escapes control.",
+      tags: ["Dance", "Capture", "Live"] },
+    { id: "revolte", label: "Gentle Revolt", fr: "Révolte douce", x: 500, y: 250,
       photo: ["#7d8288", "#26292e"], icon: null, art: ["#8b9096", "#1c1f24"],
-      desc: "Résister sans crier. Cette œuvre parle des insurrections intérieures, des refus polis et de la tendresse comme arme.",
-      tags: ["Manifeste", "Portrait", "2025"] },
+      desc: "Resisting without shouting. This work speaks of inner uprisings, polite refusals, and tenderness as a weapon.",
+      tags: ["Manifesto", "Portrait", "2025"] },
   ];
 
   const DOCK = [
@@ -114,9 +114,9 @@
     const bar = el("div", "titlebar");
     bar.innerHTML = `
       <div class="traffic">
-        <button class="close" title="Fermer"><svg viewBox="0 0 8 8"><path d="M1 1l6 6M7 1L1 7" stroke="#4d0000" stroke-width="1.4" stroke-linecap="round"/></svg></button>
-        <button class="min" title="Réduire"><svg viewBox="0 0 8 8"><path d="M1 4h6" stroke="#5a3d00" stroke-width="1.6" stroke-linecap="round"/></svg></button>
-        <button class="zoom" title="Plein écran"><svg viewBox="0 0 8 8"><path d="M2 5V2h3M6 3v3H3" stroke="#003d0a" stroke-width="1.2" fill="none"/></svg></button>
+        <button class="close" title="Close"><svg viewBox="0 0 8 8"><path d="M1 1l6 6M7 1L1 7" stroke="#4d0000" stroke-width="1.4" stroke-linecap="round"/></svg></button>
+        <button class="min" title="Minimize"><svg viewBox="0 0 8 8"><path d="M1 4h6" stroke="#5a3d00" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <button class="zoom" title="Zoom"><svg viewBox="0 0 8 8"><path d="M2 5V2h3M6 3v3H3" stroke="#003d0a" stroke-width="1.2" fill="none"/></svg></button>
       </div>
       <div class="win-title">${cfg.title}</div>
       <div class="win-spacer"></div>`;
@@ -258,10 +258,10 @@
     }).join("");
     return `<div class="finder">
       <aside class="finder-side">
-        <h4>Favoris</h4>
-        <button class="active"><span class="dot" style="background:#4aa8ff"></span>Œuvres</button>
-        <button><span class="dot" style="background:#ffb02e"></span>Récents</button>
-        <button><span class="dot" style="background:#39d98a"></span>Bureau</button>
+        <h4>Favorites</h4>
+        <button class="active"><span class="dot" style="background:#4aa8ff"></span>Works</button>
+        <button><span class="dot" style="background:#ffb02e"></span>Recents</button>
+        <button><span class="dot" style="background:#39d98a"></span>Desktop</button>
         <h4>Tags</h4>
         <button><span class="dot" style="background:#ff5f57"></span>Silence</button>
         <button><span class="dot" style="background:#a56bff"></span>Portraits</button>
@@ -271,30 +271,30 @@
   }
 
   function notesContent() {
-    return `<textarea class="note-area" spellcheck="false" placeholder="Écrivez quelque chose de silencieux…">Silence — carnet
+    return `<textarea class="note-area" spellcheck="false" placeholder="Write something quiet…">Silence — notebook
 
-• Le vide n'est pas l'absence, c'est une présence retenue.
-• Cadrer le rien demande plus de patience que cadrer le tout.
-• « Là où dort l'eau », revenir au petit matin.
+• Emptiness is not absence, it is a presence held back.
+• Framing nothing takes more patience than framing everything.
+• "Where the Water Sleeps" — go back at first light.
 
-Cliquez pour éditer. Vos notes restent dans cette fenêtre.</textarea>`;
+Click to edit. Your notes stay in this window.</textarea>`;
   }
 
   function aboutContent() {
     return `<div class="about-hero">
       <svg class="glyph" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="none" stroke="#fff" stroke-width="4"/><circle cx="50" cy="50" r="4" fill="#fff"/></svg>
       <h2>Silence</h2>
-      <div class="sub">Bureau créatif · Édition 2026</div>
+      <div class="sub">Creative Desktop · 2026 Edition</div>
     </div>
     <div class="about-rows">
       <div class="about-row"><span>Version</span><span>1.0 (build 8f00)</span></div>
-      <div class="about-row"><span>Œuvres</span><span>6 pièces</span></div>
-      <div class="about-row"><span>Moteur</span><span>HTML · CSS · JS</span></div>
-      <div class="about-row"><span>Interactions</span><span>Glisser · Fenêtres · Dock</span></div>
-      <div class="about-row"><span>Auteur</span><span>Studio Silence</span></div>
+      <div class="about-row"><span>Works</span><span>6 pieces</span></div>
+      <div class="about-row"><span>Engine</span><span>HTML · CSS · JS</span></div>
+      <div class="about-row"><span>Interactions</span><span>Drag · Windows · Dock</span></div>
+      <div class="about-row"><span>Author</span><span>Studio Silence</span></div>
     </div>
     <div class="pad" style="padding-top:6px">
-      <p style="text-align:center;color:rgba(255,255,255,.5);font-size:12.5px">Double-cliquez une icône du bureau pour ouvrir une œuvre. Glissez les fenêtres, réduisez-les dans le Dock, ou passez la souris sur le Dock pour la magnification.</p>
+      <p style="text-align:center;color:rgba(255,255,255,.5);font-size:12.5px">Double-click a desktop icon to open a piece. Drag windows around, minimize them to the Dock, or hover over the Dock for magnification.</p>
     </div>`;
   }
 
@@ -413,13 +413,13 @@ Cliquez pour éditer. Vos notes restent dans cette fenêtre.</textarea>`;
      Menu bar dropdowns
      ============================================================ */
   const MENUS = {
-    app: [ { l: "À propos de Silence", a: () => openApp({ key: "about", dockId: "finder", title: "À propos", content: aboutContent(), w: 460, h: 540 }) }, "sep",
-           { l: "Préférences…", k: "⌘," }, "sep", { l: "Masquer Silence", k: "⌘H" }, { l: "Quitter", k: "⌘Q" } ],
-    file: [ { l: "Nouvelle note", a: () => launchDock(DOCK.find(d=>d.id==="notes")) }, { l: "Nouvelle fenêtre Finder", k: "⌘N", a: () => launchDock(DOCK[0]) }, "sep", { l: "Fermer", k: "⌘W", a: closeTop } ],
-    edit: [ { l: "Annuler", k: "⌘Z" }, { l: "Rétablir", k: "⇧⌘Z" }, "sep", { l: "Couper", k: "⌘X" }, { l: "Copier", k: "⌘C" }, { l: "Coller", k: "⌘V" } ],
-    view: [ { l: "Ranger les icônes", a: cleanIcons }, { l: "Changer le fond d'écran", a: cycleWallpaper }, "sep", { l: "Activer le plein écran", k: "⌃⌘F", a: goFullscreen } ],
-    window: [ { l: "Réduire", k: "⌘M", a: () => { const w = topWindow(); if (w) minimizeWindow(w); } }, { l: "Zoom", a: () => { const w = topWindow(); if (w) toggleMaximize(w); } }, "sep", { l: "Tout fermer", a: () => windows.forEach((v) => closeWindow(v.node)) } ],
-    help: [ { l: "Aide de Silence", a: () => openApp({ key: "about", dockId: "finder", title: "À propos", content: aboutContent(), w: 460, h: 540 }) } ],
+    app: [ { l: "About Silence", a: () => openApp({ key: "about", dockId: "finder", title: "About", content: aboutContent(), w: 460, h: 540 }) }, "sep",
+           { l: "Preferences…", k: "⌘," }, "sep", { l: "Hide Silence", k: "⌘H" }, { l: "Quit Silence", k: "⌘Q" } ],
+    file: [ { l: "New Note", a: () => launchDock(DOCK.find(d=>d.id==="notes")) }, { l: "New Finder Window", k: "⌘N", a: () => launchDock(DOCK[0]) }, "sep", { l: "Close Window", k: "⌘W", a: closeTop } ],
+    edit: [ { l: "Undo", k: "⌘Z" }, { l: "Redo", k: "⇧⌘Z" }, "sep", { l: "Cut", k: "⌘X" }, { l: "Copy", k: "⌘C" }, { l: "Paste", k: "⌘V" } ],
+    view: [ { l: "Clean Up Icons", a: cleanIcons }, { l: "Change Wallpaper", a: cycleWallpaper }, "sep", { l: "Enter Full Screen", k: "⌃⌘F", a: goFullscreen } ],
+    window: [ { l: "Minimize", k: "⌘M", a: () => { const w = topWindow(); if (w) minimizeWindow(w); } }, { l: "Zoom", a: () => { const w = topWindow(); if (w) toggleMaximize(w); } }, "sep", { l: "Close All", a: () => windows.forEach((v) => closeWindow(v.node)) } ],
+    help: [ { l: "Silence Help", a: () => openApp({ key: "about", dockId: "finder", title: "About", content: aboutContent(), w: 460, h: 540 }) } ],
   };
   const dropdown = $("#dropdown");
   let openMenuBtn = null;
@@ -483,7 +483,7 @@ Cliquez pour éditer. Vos notes restent dans cette fenêtre.</textarea>`;
     if (act === "new-note") launchDock(DOCK.find((d) => d.id === "notes"));
     else if (act === "clean") cleanIcons();
     else if (act === "wallpaper") cycleWallpaper();
-    else if (act === "about") openApp({ key: "about", dockId: "finder", title: "À propos", content: aboutContent(), w: 460, h: 540 });
+    else if (act === "about") openApp({ key: "about", dockId: "finder", title: "About", content: aboutContent(), w: 460, h: 540 });
   });
 
   function cleanIcons() {
@@ -516,13 +516,15 @@ Cliquez pour éditer. Vos notes restent dans cette fenêtre.</textarea>`;
      Clock
      ============================================================ */
   const clockEl = $("#clock");
-  const DAYS = ["dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."];
-  const MON = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
+  const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   function tick() {
     const d = new Date();
-    const hh = String(d.getHours()).padStart(2, "0");
+    let h = d.getHours();
+    const ampm = h >= 12 ? "PM" : "AM";
+    h = h % 12 || 12;
     const mm = String(d.getMinutes()).padStart(2, "0");
-    clockEl.textContent = `${DAYS[d.getDay()]} ${d.getDate()} ${MON[d.getMonth()]}  ${hh}:${mm}`;
+    clockEl.textContent = `${DAYS[d.getDay()]} ${MON[d.getMonth()]} ${d.getDate()}  ${h}:${mm} ${ampm}`;
   }
   tick(); setInterval(tick, 10000);
 
@@ -536,7 +538,7 @@ Cliquez pour éditer. Vos notes restent dans cette fenêtre.</textarea>`;
     boot.classList.add("hidden");
     desktop.classList.remove("hidden");
     // welcome window
-    openApp({ key: "about", dockId: "finder", title: "Bienvenue sur Silence", content: aboutContent(), w: 460, h: 540 });
+    openApp({ key: "about", dockId: "finder", title: "Welcome to Silence", content: aboutContent(), w: 460, h: 540 });
   }, 2700);
 
   // keep windows on-screen on resize
