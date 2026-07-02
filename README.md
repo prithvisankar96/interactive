@@ -40,7 +40,7 @@ python3 -m http.server 8000   # then visit http://localhost:8000
 | File | Purpose |
 |------|---------|
 | `index.html` | Structure: menu bar, desktop, dock, boot screen |
-| `styles.css` | Wallpaper, custom hand cursor, glass, dock, windows, animations |
+| `styles.css` | Wallpaper, macOS arrow cursor, glass, dock, windows, animations |
 | `app.js` | Window manager, dragging/resizing, dock magnification, menus |
 
 Everything is self-contained — icons are inline SVG, the cursor and wallpaper
